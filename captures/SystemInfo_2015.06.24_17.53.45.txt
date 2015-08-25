@@ -1,0 +1,94 @@
+Applications Graphics Acceleration Info:
+Uptime: 19284911 Realtime: 112488617
+
+** Graphics info for pid 1432 [com.leedoyle.barcodescanner] **
+
+Recent DisplayList operations
+      DrawRenderNode
+        DrawRect
+        DrawRect
+        DrawRect
+        DrawRect
+        DrawRect
+      DrawRenderNode
+        DrawRenderNode
+        Save
+        ClipRect
+        DrawText
+        RestoreToCount
+RestoreToCount
+DrawRect
+DrawColor
+DrawRect
+DrawRect
+DrawRect
+DrawRect
+DrawRect
+DrawText
+Save
+DrawRenderNode
+  DrawRenderNode
+    DrawRect
+  DrawRenderNode
+    DrawRenderNode
+      DrawRenderNode
+        DrawColor
+      DrawRenderNode
+        DrawRect
+        DrawRect
+        DrawRect
+        DrawRect
+        DrawRect
+      DrawRenderNode
+        DrawRenderNode
+        Save
+        ClipRect
+        DrawText
+        RestoreToCount
+RestoreToCount
+DrawRect
+DrawColor
+DrawRect
+DrawRect
+DrawRect
+DrawRect
+DrawRect
+DrawText
+
+Caches:
+Current memory usage / total memory usage (bytes):
+  TextureCache            20736 / 75497472
+  LayerCache                  0 / 50331648 (numLayers = 0)
+  Garbage layers              0
+  Active layers               0
+  RenderBufferCache           0 /  8388608
+  GradientCache               0 /  1048576
+  PathCache                   0 / 33554432
+  TessellationCache       10416 /  1048576
+  TextDropShadowCache         0 /  6291456
+  PatchCache                  0 /   131072
+  FontRenderer 0 A8     1048576 /  1048576
+  FontRenderer 0 RGBA         0 /        0
+  FontRenderer 0 total  1048576 /  1048576
+Other:
+  FboCache                    0 /        0
+Total memory usage:
+  1079728 bytes, 1.03 MB
+
+Profile data in ms:
+
+	com.leedoyle.barcodescanner/com.leedoyle.barcodescanner.ViewMenuActivity/android.view.ViewRootImpl@d6a369c (visibility=8)
+	com.leedoyle.barcodescanner/com.google.zxing.client.android.CaptureActivity/android.view.ViewRootImpl@bd5fce4 (visibility=0)
+View hierarchy:
+
+  com.leedoyle.barcodescanner/com.leedoyle.barcodescanner.ViewMenuActivity/android.view.ViewRootImpl@d6a369c
+  16 views, 12.75 kB of display lists
+
+  com.leedoyle.barcodescanner/com.google.zxing.client.android.CaptureActivity/android.view.ViewRootImpl@bd5fce4
+  32 views, 27.50 kB of display lists
+
+
+Total ViewRootImpl: 2
+Total Views:        48
+Total DisplayList:  40.25 kB
+

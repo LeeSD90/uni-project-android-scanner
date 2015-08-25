@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Barcode Scanner</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- My own defined String resources -->
+    <string name="scan_button_text">Scan Barcode</string>
+    <string name="history_button_text">View Saved Barcodes</string>
+    <string name="close_text">Close</string>
+    <string name="title_activity_scanner">Barcode Scanner</string>
+    <string name="title_activity_view_bar_code">Barcode Info</string>
+    <string name="title_activity_view_history">Saved Barcodes</string>
+    <string name="clear_history">Clear History</string>
+
+    <string-array name="search_online_array">
+        <item>Ebay</item>
+        <item>Amazon</item>
+        <item>All</item>
+    </string-array>
+
+    <string-array name="search_region_array">
+        <item>UK</item>
+        <item>Germany</item>
+        <item>US</item>
+        <item>India</item>
+    </string-array>
+
+</resources>

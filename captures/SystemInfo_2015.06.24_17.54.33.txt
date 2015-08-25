@@ -1,0 +1,67 @@
+TASK com.leedoyle.barcodescanner id=729
+  ACTIVITY com.leedoyle.barcodescanner/.ViewBarcodeActivity 2db7d597 pid=1432
+    Local FragmentActivity 37bb252e State:
+      mCreated=truemResumed=true mStopped=false mReallyStopped=false
+      mLoadersStarted=true
+    FragmentManager misc state:
+      mActivity=com.leedoyle.barcodescanner.ViewBarcodeActivity@37bb252e
+      mContainer=android.support.v4.app.FragmentActivity$2@2f9708cf
+      mCurState=5 mStateSaved=false mDestroyed=false
+    View Hierarchy:
+      com.android.internal.policy.impl.PhoneWindow$DecorView{2718025c V.E..... ... 0,0-1920,1080}
+        android.widget.LinearLayout{25193965 V.E..... ... 0,0-1920,1080}
+          android.view.ViewStub{458663a G.E..... ... 0,0-0,0 #1020374}
+          android.widget.FrameLayout{13a562eb V.E..... ... 0,75-1920,1080}
+            android.support.v7.internal.widget.ActionBarOverlayLayout{2e50e848 V.E..... ... 0,0-1920,1005 #7f0c003f app:id/decor_content_parent}
+              android.support.v7.internal.widget.NativeActionModeAwareLayout{ee906e1 V.E..... ... 0,144-1920,1005 #1020002 android:id/content}
+                android.widget.ScrollView{c56ac06 VFED.V.. ... 0,0-1920,861 #7f0c0052 app:id/ScrollView01}
+                  android.widget.RelativeLayout{3bf542c7 V.E..... ... 0,0-1920,1000}
+                    android.widget.TextView{2eb040f4 V.ED.... ... 48,123-454,200 #7f0c0053 app:id/formatText}
+                    android.widget.TextView{58e301d V.ED.... ... 48,317-478,394 #7f0c0054 app:id/numberText}
+                    android.widget.TextView{3a18292 V.ED.... ... 484,137-629,200 #7f0c0055 app:id/resultFormat}
+                    android.widget.TextView{10794463 V.ED.... ... 514,331-838,394 #7f0c0056 app:id/contentFormat}
+                    android.widget.Button{3e0a7860 VFED..C. ... 48,520-1872,664 #7f0c0057 app:id/saveButton}
+                    android.widget.Button{1562b119 VF.D..C. ... 48,664-1872,808 #7f0c0058 app:id/removeButton}
+                    android.widget.Button{3f5135de VFED..C. ... 48,808-1872,952 #7f0c0059 app:id/ebayButton}
+                    android.widget.TextView{3bb1c3bf G.ED.... ... 0,0-0,0 #7f0c005a app:id/productName}
+                    android.widget.TextView{390eba8c G.ED.... ... 0,0-0,0 #7f0c005c app:id/productPrice}
+                    android.widget.TextView{1c6445d5 G.ED.... ... 0,0-0,0 #7f0c005d app:id/productURL}
+                    android.widget.ImageView{3bb6d1ea G.ED.... ... 0,0-0,0 #7f0c005b app:id/productImageView}
+                    android.widget.Button{25c8dcdb GFED..C. ... 0,0-0,0 #7f0c005e app:id/prevButton}
+                    android.widget.Button{3632f378 GFED..C. ... 0,0-0,0 #7f0c005f app:id/nextButton}
+                    android.widget.TextView{20b06a51 G.ED.... ... 0,0-0,0 #7f0c0060 app:id/resultText}
+                    android.widget.TextView{372822b6 G.ED.... ... 0,0-0,0 #7f0c0061 app:id/listCountText}
+              android.support.v7.internal.widget.ActionBarContainer{56e6bb7 V.ED.... ... 0,0-1920,144 #7f0c0040 app:id/action_bar_container}
+                android.support.v7.widget.Toolbar{3b5fcf24 V.E..... ... 0,0-1920,144 #7f0c0041 app:id/action_bar}
+                  android.widget.TextView{12c05a8d V.ED.... ... 48,43-284,101}
+                  android.support.v7.widget.ActionMenuView{2d8bb442 V.E..... ... 1920,0-1920,144}
+                android.support.v7.internal.widget.ActionBarContextView{22740c53 G.E..... ... 0,0-0,0 #7f0c0042 app:id/action_context_bar}
+        android.view.View{225cb990 V.ED.... ... 0,0-1920,75 #102002f android:id/statusBarBackground}
+
+  ACTIVITY com.leedoyle.barcodescanner/com.google.zxing.client.android.CaptureActivity 3af8c1d8 pid=(not running)
+
+  ACTIVITY com.leedoyle.barcodescanner/.ViewMenuActivity 37a9ee8a pid=1432
+    Local FragmentActivity 2f207440 State:
+      mCreated=truemResumed=false mStopped=true mReallyStopped=true
+      mLoadersStarted=false
+    FragmentManager misc state:
+      mActivity=com.leedoyle.barcodescanner.ViewMenuActivity@2f207440
+      mContainer=android.support.v4.app.FragmentActivity$2@174644d4
+      mCurState=2 mStateSaved=true mDestroyed=false
+    View Hierarchy:
+      com.android.internal.policy.impl.PhoneWindow$DecorView{21dc167d I.E..... ... 0,0-1080,1920}
+        android.widget.LinearLayout{1b3dd972 V.E..... ... 0,0-1080,1920}
+          android.view.ViewStub{11c281c3 G.E..... ... 0,0-0,0 #1020374}
+          android.widget.FrameLayout{332cda40 V.E..... ... 0,75-1080,1920}
+            android.support.v7.internal.widget.ActionBarOverlayLayout{2189d79 V.E..... ... 0,0-1080,1845 #7f0c003f app:id/decor_content_parent}
+              android.support.v7.internal.widget.NativeActionModeAwareLayout{290c1abe V.E..... ... 0,168-1080,1845 #1020002 android:id/content}
+                android.widget.RelativeLayout{1741771f V.E..... ... 0,0-1080,1677}
+                  android.widget.Button{1a255a6c VFED..C. ... 48,648-1032,948 #7f0c004f app:id/closeButton}
+                  android.widget.Button{1efc9835 VFED..C. ... 48,48-1032,348 #7f0c0051 app:id/scanButton}
+                  android.widget.Button{15eb24ca VFED..C. ... 48,348-1032,648 #7f0c0050 app:id/historyButton}
+              android.support.v7.internal.widget.ActionBarContainer{3890663b V.ED.... ... 0,0-1080,168 #7f0c0040 app:id/action_bar_container}
+                android.support.v7.widget.Toolbar{2143b158 V.E..... ... 0,0-1080,168 #7f0c0041 app:id/action_bar}
+                  android.widget.TextView{beb82b1 V.ED.... ... 48,43-495,125}
+                  android.support.v7.widget.ActionMenuView{1afec396 V.E..... ... 1080,0-1080,168}
+                android.support.v7.internal.widget.ActionBarContextView{3a152b17 G.E..... ... 0,0-0,0 #7f0c0042 app:id/action_context_bar}
+        android.view.View{18ee8b04 V.ED.... ... 0,0-1080,75 #102002f android:id/statusBarBackground}

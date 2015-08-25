@@ -1,0 +1,202 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ScrollView01" android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="com.leedoyle.barcodescanner.ViewBarcodeActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Barcode Format:"
+        android:id="@+id/formatText"
+        android:layout_marginTop="25dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Barcode Number:"
+        android:id="@+id/numberText"
+        android:layout_marginTop="39dp"
+        android:layout_below="@+id/formatText"
+        android:layout_alignLeft="@+id/formatText"
+        android:layout_alignStart="@+id/formatText" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Medium Text"
+        android:id="@+id/resultFormat"
+        android:layout_alignBottom="@+id/formatText"
+        android:layout_toRightOf="@+id/formatText"
+        android:layout_toEndOf="@+id/formatText"
+        android:layout_marginLeft="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Medium Text"
+        android:id="@+id/contentFormat"
+        android:layout_alignBottom="@+id/numberText"
+        android:layout_alignLeft="@+id/resultFormat"
+        android:layout_alignStart="@+id/resultFormat"
+        android:layout_marginLeft="10dp" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save Barcode"
+        android:id="@+id/saveButton"
+
+        android:layout_marginTop="42dp"
+        android:layout_below="@+id/numberText"
+        android:layout_alignLeft="@+id/numberText"
+        android:layout_alignStart="@+id/numberText"
+        android:layout_alignParentEnd="false"
+        android:layout_alignParentRight="true" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Remove Barcode"
+        android:id="@+id/removeButton"
+        android:layout_below="@+id/saveButton"
+        android:layout_alignParentLeft="false"
+        android:layout_alignParentStart="false"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="false"
+        android:layout_alignLeft="@+id/saveButton" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Find Online"
+        android:id="@+id/findOnlineButton"
+        android:layout_below="@+id/removeButton"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_toStartOf="@+id/contentFormat"
+        android:layout_toLeftOf="@+id/contentFormat" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Medium Text"
+        android:id="@+id/productName"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/productImageView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Medium Text"
+        android:id="@+id/productPrice"
+        android:layout_below="@+id/productName"
+        android:layout_alignParentLeft="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:autoLink="web"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Medium Text"
+        android:id="@+id/productURL"
+        android:layout_below="@+id/productPrice"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="false" />
+
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:scaleType="fitXY"
+        android:id="@+id/productImageView"
+        android:layout_marginTop="30dp"
+        android:background="#000000"
+        android:padding="1dp"
+        android:layout_below="@+id/findOnlineButton"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="95dp"
+        android:layout_height="wrap_content"
+        android:text="Previous"
+        android:id="@+id/prevButton"
+        android:layout_alignTop="@+id/productImageView"
+        android:layout_toLeftOf="@+id/productImageView"
+        android:layout_toStartOf="@+id/productImageView"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="15dp" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="95dp"
+        android:layout_height="wrap_content"
+        android:text="Next"
+        android:id="@+id/nextButton"
+        android:layout_alignTop="@+id/productImageView"
+        android:layout_toRightOf="@+id/productImageView"
+        android:layout_toEndOf="@+id/productImageView"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Medium Text"
+        android:id="@+id/resultText"
+        android:layout_below="@+id/findOnlineButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Small Text"
+        android:id="@+id/listCountText"
+        android:layout_below="@+id/findOnlineButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="7dp" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/searchSpinner"
+        android:layout_alignBottom="@+id/findOnlineButton"
+        android:layout_toLeftOf="@+id/regionSpinner"
+        android:layout_alignTop="@+id/findOnlineButton"
+        android:layout_alignLeft="@+id/contentFormat"
+        android:layout_alignStart="@+id/contentFormat" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/regionSpinner"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/contentFormat"
+        android:layout_alignTop="@+id/searchSpinner"
+        android:layout_alignBottom="@+id/searchSpinner"
+        android:layout_toRightOf="@+id/contentFormat" />
+
+</RelativeLayout>
+</ScrollView>

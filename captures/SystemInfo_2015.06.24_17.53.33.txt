@@ -1,0 +1,90 @@
+Applications Graphics Acceleration Info:
+Uptime: 19273231 Realtime: 112476937
+
+** Graphics info for pid 1432 [com.leedoyle.barcodescanner] **
+
+Recent DisplayList operations
+              DrawRenderNode
+                Save
+                ClipRect
+                DrawRoundRect
+                RestoreToCount
+              Save
+              ClipRect
+              Translate
+              DrawText
+              RestoreToCount
+              DrawRenderNode
+                Save
+                ClipRect
+                SaveLayer
+                DrawRoundRect
+                RestoreToCount
+              Save
+              ClipRect
+              Translate
+              DrawText
+              RestoreToCount
+            RestoreToCount
+        DrawRenderNode
+          DrawRenderNode
+            DrawRect
+          DrawRenderNode
+            DrawRenderNode
+              Save
+              ClipRect
+              DrawText
+              RestoreToCount
+    RestoreToCount
+  DrawRenderNode
+    DrawRenderNode
+      DrawRect
+RestoreToCount
+DrawRect
+DrawShadow
+DrawShadow
+DrawShadow
+DrawRoundRect
+DrawRoundRect
+multiDraw
+  DrawText
+DrawRoundRect
+DrawText
+DrawShadow
+DrawRect
+DrawRect
+DrawText
+
+Caches:
+Current memory usage / total memory usage (bytes):
+  TextureCache           200752 / 75497472
+  LayerCache                  0 / 50331648 (numLayers = 0)
+  Garbage layers              0
+  Active layers               0
+  RenderBufferCache           0 /  8388608
+  GradientCache               0 /  1048576
+  PathCache                   0 / 33554432
+  TessellationCache       10416 /  1048576
+  TextDropShadowCache         0 /  6291456
+  PatchCache               1216 /   131072
+  FontRenderer 0 A8     1048576 /  1048576
+  FontRenderer 0 RGBA         0 /        0
+  FontRenderer 0 total  1048576 /  1048576
+Other:
+  FboCache                    0 /        0
+Total memory usage:
+  1260960 bytes, 1.20 MB
+
+Profile data in ms:
+
+	com.leedoyle.barcodescanner/com.leedoyle.barcodescanner.ViewMenuActivity/android.view.ViewRootImpl@d6a369c (visibility=0)
+View hierarchy:
+
+  com.leedoyle.barcodescanner/com.leedoyle.barcodescanner.ViewMenuActivity/android.view.ViewRootImpl@d6a369c
+  16 views, 17.04 kB of display lists
+
+
+Total ViewRootImpl: 1
+Total Views:        16
+Total DisplayList:  17.04 kB
+

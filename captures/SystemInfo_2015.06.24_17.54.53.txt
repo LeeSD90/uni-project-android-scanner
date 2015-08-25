@@ -1,0 +1,86 @@
+TASK com.leedoyle.barcodescanner id=729
+  ACTIVITY com.leedoyle.barcodescanner/com.google.zxing.client.android.CaptureActivity 3af8c1d8 pid=1432
+    Local Activity 3a19a6c0 State:
+      mResumed=true mStopped=false mFinished=false
+      mLoadersStarted=true
+      mChangingConfigurations=false
+      mCurrentConfig={0.85 272mcc1mnc en_GB ldltr sw360dp w640dp h335dp 480dpi nrml long land finger -keyb/v/h -nav/h s.32 themeResource=themes:{default=overlay:com.cyngn.themes.modern, iconPack:com.cyngn.themes.modern, fontPkg:com.cyngn.hexo, com.android.systemui=overlay:com.cyngn.themes.modern, com.android.systemui.navbar=overlay:com.cyngn.themes.modern}}
+    FragmentManager misc state:
+      mActivity=com.google.zxing.client.android.CaptureActivity@3a19a6c0
+      mContainer=android.app.Activity$1@14526eec
+      mCurState=5 mStateSaved=false mDestroyed=false
+    ViewRoot:
+      mAdded=true mRemoved=false
+      mConsumeBatchedInputScheduled=false
+      mConsumeBatchedInputImmediatelyScheduled=false
+      mPendingInputEventCount=0
+      mProcessInputEventsScheduled=false
+      mTraversalScheduled=false
+      android.view.ViewRootImpl$NativePreImeInputStage: mQueueLength=0
+      android.view.ViewRootImpl$ImeInputStage: mQueueLength=0
+      android.view.ViewRootImpl$NativePostImeInputStage: mQueueLength=0
+    Choreographer:
+      mFrameScheduled=false
+      mLastFrameTime=19352695 (61 ms ago)
+    View Hierarchy:
+      com.android.internal.policy.impl.PhoneWindow$DecorView{3b6d52b5 V.E..... R....... 0,0-1920,1080}
+        android.widget.LinearLayout{9bd8d4a V.E..... ........ 0,0-1920,1080}
+          android.view.ViewStub{37fde4bb G.E..... ......I. 0,0-0,0 #1020374}
+          android.widget.FrameLayout{166d8dd8 V.E..... ........ 0,0-1920,1080 #1020002 android:id/content}
+            android.view.SurfaceView{3aed6531 V.E..... ........ 0,0-1920,1080 #7f0c0064 app:id/zxing_preview_view}
+            com.google.zxing.client.android.ViewfinderView{20cf3416 V.ED.... ........ 0,0-1920,1080 #7f0c0065 app:id/zxing_viewfinder_view}
+            android.widget.LinearLayout{391c1197 G.E..... ......I. 0,0-0,0 #7f0c0066 app:id/zxing_result_view}
+              android.widget.LinearLayout{1019af84 V.E..... ......I. 0,0-0,0}
+                android.widget.LinearLayout{3282236d V.E..... ......I. 0,0-0,0}
+                  android.widget.ImageView{3b827ba2 V.ED.... ......I. 0,0-0,0 #7f0c0067 app:id/zxing_barcode_image_view}
+                  android.widget.LinearLayout{19863033 V.E..... ......I. 0,0-0,0}
+                    android.widget.TextView{3b443ff0 V.ED.... ......I. 0,0-0,0}
+                    android.widget.TextView{2b2a8969 V.ED.... ......ID 0,0-0,0 #7f0c0068 app:id/zxing_format_text_view}
+                  android.widget.LinearLayout{730afee V.E..... ......I. 0,0-0,0}
+                    android.widget.TextView{25699c8f V.ED.... ......I. 0,0-0,0}
+                    android.widget.TextView{1456b1c V.ED.... ......ID 0,0-0,0 #7f0c0069 app:id/zxing_type_text_view}
+                  android.widget.LinearLayout{24d95325 V.E..... ......I. 0,0-0,0}
+                    android.widget.TextView{1b7bdcfa V.ED.... ......I. 0,0-0,0}
+                    android.widget.TextView{146d72ab V.ED.... ......ID 0,0-0,0 #7f0c006a app:id/zxing_time_text_view}
+                  android.widget.LinearLayout{26cc1d08 V.E..... ......I. 0,0-0,0}
+                    android.widget.TextView{31f0fca1 V.ED.... ......I. 0,0-0,0 #7f0c006b app:id/zxing_meta_text_view_label}
+                    android.widget.TextView{361acec6 V.ED.... ......ID 0,0-0,0 #7f0c006c app:id/zxing_meta_text_view}
+                android.widget.ScrollView{278e8e87 VFED.V.. ......I. 0,0-0,0}
+                  android.widget.LinearLayout{a8a01b4 V.E..... ......I. 0,0-0,0}
+                    android.widget.TextView{e7fc1dd VFED..CL ......I. 0,0-0,0 #7f0c006d app:id/zxing_contents_text_view}
+                    android.widget.TextView{27651152 VFED..CL ......I. 0,0-0,0 #7f0c006e app:id/zxing_contents_supplement_text_view}
+              android.widget.LinearLayout{8bb8c23 V.E..... ......I. 0,0-0,0 #7f0c006f app:id/zxing_result_button_view}
+                android.widget.Button{229f8520 GFED..C. ......I. 0,0-0,0}
+                android.widget.Button{2f3b9ed9 GFED..C. ......I. 0,0-0,0}
+                android.widget.Button{3b9ef09e GFED..C. ......I. 0,0-0,0}
+                android.widget.Button{830c77f GFED..C. ......I. 0,0-0,0}
+            android.widget.TextView{24c7d34c V.ED.... ........ 559,1031-1360,1080 #7f0c0070 app:id/zxing_status_view}
+    Looper (main, tid 1) {1f8a4fae}
+      Message 0: { when=+18ms what=2 obj=android.view.View$AttachInfo$InvalidateInfo@43e4f95 target=android.view.ViewRootImpl$ViewRootHandler }
+      (Total messages: 1, idling=false, quitting=false)
+
+  ACTIVITY com.leedoyle.barcodescanner/.ViewMenuActivity 37a9ee8a pid=1432
+    Local FragmentActivity 2f207440 State:
+      mCreated=truemResumed=false mStopped=true mReallyStopped=true
+      mLoadersStarted=false
+    FragmentManager misc state:
+      mActivity=com.leedoyle.barcodescanner.ViewMenuActivity@2f207440
+      mContainer=android.support.v4.app.FragmentActivity$2@174644d4
+      mCurState=2 mStateSaved=true mDestroyed=false
+    View Hierarchy:
+      com.android.internal.policy.impl.PhoneWindow$DecorView{21dc167d I.E..... ... 0,0-1080,1920}
+        android.widget.LinearLayout{1b3dd972 V.E..... ... 0,0-1080,1920}
+          android.view.ViewStub{11c281c3 G.E..... ... 0,0-0,0 #1020374}
+          android.widget.FrameLayout{332cda40 V.E..... ... 0,75-1080,1920}
+            android.support.v7.internal.widget.ActionBarOverlayLayout{2189d79 V.E..... ... 0,0-1080,1845 #7f0c003f app:id/decor_content_parent}
+              android.support.v7.internal.widget.NativeActionModeAwareLayout{290c1abe V.E..... ... 0,168-1080,1845 #1020002 android:id/content}
+                android.widget.RelativeLayout{1741771f V.E..... ... 0,0-1080,1677}
+                  android.widget.Button{1a255a6c VFED..C. ... 48,648-1032,948 #7f0c004f app:id/closeButton}
+                  android.widget.Button{1efc9835 VFED..C. ... 48,48-1032,348 #7f0c0051 app:id/scanButton}
+                  android.widget.Button{15eb24ca VFED..C. ... 48,348-1032,648 #7f0c0050 app:id/historyButton}
+              android.support.v7.internal.widget.ActionBarContainer{3890663b V.ED.... ... 0,0-1080,168 #7f0c0040 app:id/action_bar_container}
+                android.support.v7.widget.Toolbar{2143b158 V.E..... ... 0,0-1080,168 #7f0c0041 app:id/action_bar}
+                  android.widget.TextView{beb82b1 V.ED.... ... 48,43-495,125}
+                  android.support.v7.widget.ActionMenuView{1afec396 V.E..... ... 1080,0-1080,168}
+                android.support.v7.internal.widget.ActionBarContextView{3a152b17 G.E..... ... 0,0-0,0 #7f0c0042 app:id/action_context_bar}
+        android.view.View{18ee8b04 V.ED.... ... 0,0-1080,75 #102002f android:id/statusBarBackground}
