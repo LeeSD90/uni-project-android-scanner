@@ -2,6 +2,7 @@ package com.leedoyle.barcodescanner;
 
 import android.content.Context;
 import android.test.InstrumentationTestCase;
+import android.util.Log;
 
 import java.util.ArrayList;
 

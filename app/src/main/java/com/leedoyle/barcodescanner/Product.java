@@ -2,7 +2,7 @@ package com.leedoyle.barcodescanner;
 
 public class Product {
 
-    private String name;                                                // String variables to store the product attributes
+    private String name;                                                                            // String variables to store the product attributes
     private String price;
     private String url;
     private String imageURL;
@@ -12,7 +12,7 @@ public class Product {
      * initialised to empty strings
      */
     public Product(){
-        name = "";                                                      // Initialise the class String variables to empty strings
+        name = "";                                                                                  // Initialise the class String variables to empty strings
         price = "";
         url = "";
         imageURL = "";
@@ -27,13 +27,13 @@ public class Product {
      * @param imageURL  The Ebay thumnail image URL
      */
     public Product(String n, String p, String url, String imageURL){
-        name = n;                                                       // Initialise the class String variables to those passed
-        price = p;                                                      // in the constructors argument
+        name = n;                                                                                   // Initialise the class String variables to those passed
+        price = p;                                                                                  // in the constructors argument
         this.url = url;
         this.imageURL = imageURL;
     }
 
-    public String getName() { return name; }                            // Getter and setter methods for each of the Product class attributes
+    public String getName() { return name; }                                                        // Getter and setter methods for each of the Product class attributes
 
     public String getPrice() { return price; }
 

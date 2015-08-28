@@ -13,13 +13,13 @@ public class ScanActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(null);                                                                   // Creating with null instead of savedInstanceState ensures a fresh activity is created
+        super.onCreate(null);                                                                       // Creating with null instead of savedInstanceState ensures a fresh activity is created
         setContentView(R.layout.activity_main_menu);
         initiateIntentIntegrator();
     }
 
     @Override
-    public void onActivityResult(int request, int result, Intent intent) {                      // Called when a result is returned from the IntentIntegrators scan activity
+    public void onActivityResult(int request, int result, Intent intent) {                          // Called when a result is returned from the IntentIntegrators scan activity
         switch(result) {
             case -1:                                                                                // If the scan was successful and has a result
                 initiateViewBarcode(IntentIntegrator.parseActivityResult(request, result, intent)); // Passes the IntentResult to initiateViewBarcode()
@@ -39,18 +39,18 @@ public class ScanActivity extends ActionBarActivity {
 
     }
 
-    private void initiateIntentIntegrator(){                                                    // Attempts to initiate a ZXing IntentIntegrator scan
-        IntentIntegrator integrator = new IntentIntegrator(this);                               // Create a new ZXing IntentIntegrator
-        integrator.setPrompt("Look at a barcode through the viewfinder to scan it");            // Set the user prompt message
-        integrator.initiateScan(IntentIntegrator.PRODUCT_CODE_TYPES);                           // Initiate a scan activity to read in a product barcode
+    private void initiateIntentIntegrator(){                                                        // Attempts to initiate a ZXing IntentIntegrator scan
+        IntentIntegrator integrator = new IntentIntegrator(this);                                   // Create a new ZXing IntentIntegrator
+        integrator.setPrompt("Look at a barcode through the viewfinder to scan it");                // Set the user prompt message
+        integrator.initiateScan(IntentIntegrator.PRODUCT_CODE_TYPES);                               // Initiate a scan activity to read in a product barcode
     }
 
     private void initiateViewBarcode(IntentResult scanResult){
-            Barcode b = new Barcode(scanResult);                                                // Create a new Barcode object from the IntentResult
-            Intent i = new Intent(this, ViewBarcodeActivity.class);                             // Create a new Intent using the ViewBarCodeActivity class
-            i.putExtras(b.getBundledBarcode());                                                 // Package the Barcode object into a bundle, and add it to the Intent as an extra
-            this.startActivity(i);                                                              // Begin the ViewBarcodeActivity
-            this.finish();                                                                      // End this Activity
+            Barcode b = new Barcode(scanResult);                                                    // Create a new Barcode object from the IntentResult
+            Intent i = new Intent(this, ViewBarcodeActivity.class);                                 // Create a new Intent using the ViewBarCodeActivity class
+            i.putExtras(b.getBundledBarcode());                                                     // Package the Barcode object into a bundle, and add it to the Intent as an extra
+            this.startActivity(i);                                                                  // Begin the ViewBarcodeActivity
+            this.finish();                                                                          // End this Activity
     }
 
 

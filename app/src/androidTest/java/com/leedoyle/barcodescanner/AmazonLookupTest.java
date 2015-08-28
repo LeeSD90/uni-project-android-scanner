@@ -11,10 +11,4 @@ public class AmazonLookupTest extends TestCase {
         AmazonLookup lookup = new AmazonLookup();                               // Create a new AmazonLookup object to test with
         assertEquals(expectedResult, lookup.generateHMAC(dataToSign, "key"));   // Test that the generateHMAC method returns a String matching the expectedResult String above
     }
-
-    public void testLookup() throws Exception{
-        AmazonLookup lookup = new AmazonLookup();
-        Barcode b = new Barcode("5901234123457", "EAN-8");
-        lookup.lookup(b);
-    }
 }
