@@ -30,8 +30,8 @@ import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
 
 public class AmazonLookup extends Lookup {
-    private String secretKey = "8DMnkFHY2n6DUDthFFHGLNF3RrhW2BPNdB9lohTi";                          // Amazon secret key used to calculate the Hmac signature
-    private String appID = "AKIAJHFTUSH2JUTQ7X6A";                                                  // Store the unique Amazon identification key
+    private String secretKey = "*";                          // Amazon secret key used to calculate the Hmac signature
+    private String appID = "*";                                                  // Store the unique Amazon identification key
 
     public AmazonLookup(){                                                                          // Constructor
         client = new DefaultHttpClient();                                                           // Create a new HttPClient object used to execute Http requests
