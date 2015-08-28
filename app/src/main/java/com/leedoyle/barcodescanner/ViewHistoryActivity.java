@@ -25,26 +25,26 @@ public class ViewHistoryActivity extends ActionBarActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_view_history);
+        setContentView(R.layout.activity_view_history);                                             // Set the view to the XML layout we've defined
 
-        historyList = (ListView) findViewById(R.id.historyList);        // Set the ListView object historyList to reference the UIs ListView widget
-        history = new BarcodeHistory(getApplicationContext());          // Set history to reference a new BarcodeHistory object created using the current Context
+        historyList = (ListView) findViewById(R.id.historyList);                                    // Set the ListView object historyList to reference the UIs ListView widget
+        history = new BarcodeHistory(getApplicationContext());                                      // Set history to reference a new BarcodeHistory object created using the current Context
 
-        updateView();                                                   // Update the view to display the list of barcodes saved to the history
+        updateView();                                                                               // Update the view to display the list of barcodes saved to the history
     }
 
-    private void initiateViewBarcode(Barcode b){                        // Initiate a new ViewBarcodeActivity Intent for the specified Barcode object
-        Intent i = new Intent(this, ViewBarcodeActivity.class);         // Create a new Intent using the ViewBarCodeActivity class
-        i.putExtras(b.getBundledBarcode());                             // Package the Barcode object into a bundle, and add it to the Intent as an extra
-        this.startActivityForResult(i, 1);                              // Begin the ViewBarcodeActivity with request code 1
+    private void initiateViewBarcode(Barcode b){                                                    // Initiate a new ViewBarcodeActivity Intent for the specified Barcode object
+        Intent i = new Intent(this, ViewBarcodeActivity.class);                                     // Create a new Intent using the ViewBarCodeActivity class
+        i.putExtras(b.getBundledBarcode());                                                         // Package the Barcode object into a bundle, and add it to the Intent as an extra
+        this.startActivityForResult(i, 1);                                                          // Begin the ViewBarcodeActivity with request code 1
     }
 
-    private void updateView(){                                          // Update the UI view to reflect any changes made
-        barcodes = history.getHistory();                                // Retrieve the ArrayList of Barcode objects in the barcode history file
-        barcodeNumbers = new ArrayList<String>();                       // Create a new ArrayList of Strings to store the numbers of the Barcode objects
+    private void updateView(){                                                                      // Update the UI view to reflect any changes made
+        barcodes = history.getHistory();                                                            // Retrieve the ArrayList of Barcode objects in the barcode history file
+        barcodeNumbers = new ArrayList<String>();                                                   // Create a new ArrayList of Strings to store the numbers of the Barcode objects
 
-        for (Barcode b : barcodes) {                                    // Loop through each Barcode in the ArrayList barcodes
-            barcodeNumbers.add(b.getNumber());                          // Add the number of the current Barcode object to the String ArrayList barcodeNumbers
+        for (Barcode b : barcodes) {                                                                // Loop through each Barcode in the ArrayList barcodes
+            barcodeNumbers.add(b.getNumber());                                                      // Add the number of the current Barcode object to the String ArrayList barcodeNumbers
         }
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.listrow, barcodeNumbers); // Create a new ArrayAdapter which will use the barcodeNumbers ArrayList
