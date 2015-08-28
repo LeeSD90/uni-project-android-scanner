@@ -67,63 +67,62 @@ public class AmazonLookup extends Lookup {
         return productList;                                                                         // Return the list of products
     }
 
-    private String getCanonicalizedRequest(Barcode b){                                              // TODO
-        StringBuffer canonicalizedString = new StringBuffer();
-        SortedMap<String, String> params = new TreeMap<String, String>();
-        params.put("AWSAccessKeyId", appID);
-        params.put("AssociateTag", "dummyTag");
-        params.put("Operation", "ItemLookup");
-        params.put("ItemId", b.getNumber());
-        params.put("ResponseGroup", "Images,ItemAttributes,Offers");
-        params.put("SearchIndex", "All");
-        params.put("IdType", b.getSimpleFormat());
-        params.put("Timestamp", getTimeStamp());
+    private String getCanonicalizedRequest(Barcode b){                                              // Forms a request String standardised as required by Amazons API, ready for signing
+        StringBuffer canonicalizedString = new StringBuffer();                                      // StringBuffer used to hold our standardised request String as we form it
+        SortedMap<String, String> parameters = new TreeMap<String, String>();                                    // Map to hold the desired request parameters to add to the request String
+        parameters.put("AWSAccessKeyId", appID);                                                    // Add each of the required parameters to the Map
+        parameters.put("AssociateTag", "dummyTag");
+        parameters.put("Operation", "ItemLookup");
+        parameters.put("ItemId", b.getNumber());
+        parameters.put("ResponseGroup", "Images,ItemAttributes,Offers");
+        parameters.put("SearchIndex", "All");
+        parameters.put("IdType", b.getSimpleFormat());
+        parameters.put("Timestamp", getTimeStamp());
 
-        Iterator<Map.Entry<String,String>> iterator = params.entrySet().iterator();
-        while(iterator.hasNext()){
-            Map.Entry<String, String> pair = iterator.next();
-            canonicalizedString.append(encode(pair.getKey()));
-            canonicalizedString.append("=");
-            canonicalizedString.append(encode(pair.getValue()));
-            if(iterator.hasNext()){
-                canonicalizedString.append("&");
+        Iterator<Map.Entry<String,String>> iterator = parameters.entrySet().iterator();             // Create an Iterator for the set of pairs in the parameter Map
+        while(iterator.hasNext()){                                                                  // Loop through each element with the iterator
+            Map.Entry<String, String> pair = iterator.next();                                       // Create a String pair for each element in the iterator
+            canonicalizedString.append(encode(pair.getKey()));                                      // Encode and append the key (I.e. the parameter) to the request String
+            canonicalizedString.append("=");                                                        // Append an equals between the Key and the Value
+            canonicalizedString.append(encode(pair.getValue()));                                    // Encode and append the value (I.e. the parameter value) to the request String
+            if(iterator.hasNext()){                                                                 // If there are more elements
+                canonicalizedString.append("&");                                                    // Append an ampersand between the parameters
             }
         }
-        return canonicalizedString.toString();
+        return canonicalizedString.toString();                                                      // Return the standardised request String
     }
 
-    private String encode(String s){                                                                // TODO
-        String result = "";
+    private String encode(String s){                                                                // Encodes the given String as required by the Amazon API
+        String result = "";                                                                         // Empty String to store the encoded result
         try{
-            result = URLEncoder.encode(s, "UTF-8").replace("*", "%20")
-                                                  .replace("+", "%2A")
+            result = URLEncoder.encode(s, "UTF-8").replace("*", "%20")                              // Encode and store the given String, replacing "*", "+" and "%7E"
+                                                  .replace("+", "%2A")                              // with "%20", "%2A" and "~" respectively
                                                   .replace("%7E", "~");
         }
-        catch(Exception e){
-            Log.d("Encoder", "Error encoding string");
+        catch(Exception e){                                                                         // If an exception occurs
+            Log.d("Encoder", "Error encoding string");                                              // Log the error
         }
-        return result;
+        return result;                                                                              // Return the result
     }
 
     private String getTimeStamp(){                                                                  // Return a timestamp of the current time, formatted as required for Amazon API requests
-        String timeStamp;                                                                           // String to hold the time stamp
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");                   // Create a new DateFormat object defining the date format as required by the Amazon request
         dateFormat.setTimeZone(TimeZone.getTimeZone("GMT"));                                        // Sets the timezone to GMT as recommended in the Amazon API developer documentation
-        timeStamp = dateFormat.format(Calendar.getInstance().getTime());                            // Get the current time and format it using the above DateFormat
-        return timeStamp;                                                                           // Return the correctly formatted time stamp as required in the Amazon request
+        return dateFormat.format(Calendar.getInstance().getTime());                                 // Return the correctly formatted time stamp as required in the Amazon request
     }
 
-    private String generateHMAC(String dataToSign, String key ) throws SignatureException{          // TODO
+    private String generateHMAC(String dataToSign, String key ) throws SignatureException{          // Given a correctly formatted, standardised Amazon request String and a valid Amazon secret key
+                                                                                                    // generates a HMAC signature as specified by Amazons API
         try{
-            SecretKeySpec hmacKey = new SecretKeySpec(key.getBytes("UTF-8"), "HmacSHA256");
-            Mac mac = Mac.getInstance("HmacSHA256");
-            mac.init(hmacKey);
-            byte[] byteHmac = mac.doFinal(dataToSign.getBytes("UTF-8"));
-            Base64 encoder = new Base64();
-            return new String(encoder.encode(byteHmac));
+            SecretKeySpec hmacKey = new SecretKeySpec(key.getBytes("UTF-8"), "HmacSHA256");         // Create a secret key specification using the specified secret key and the HMAC-SHA256 algorithmn
+            Mac mac = Mac.getInstance("HmacSHA256");                                                // Create a new MAC instance providing the HMAC-SHA256 algorithmn
+            mac.init(hmacKey);                                                                      // Initialises the MAC instance with the secret key specification
+            byte[] byteHmac = mac.doFinal(dataToSign.getBytes("UTF-8"));                            // Compute the HMAC digest and store it in a byte array
+            Base64 encoder = new Base64();                                                          // Create a new Base64 codec
+            return new String(encoder.encode(byteHmac));                                            // Encode the hmac binary byte array into character data
         }
-        catch(Exception e){
-            throw new SignatureException("Failed to calculate Hmac: " + e.toString());
+        catch(Exception e){                                                                         // If an exception occurs
+            throw new SignatureException("Failed to calculate Hmac: " + e.toString());              // Throw a SignatureException error with a message and stack trace
         }
     }
 
