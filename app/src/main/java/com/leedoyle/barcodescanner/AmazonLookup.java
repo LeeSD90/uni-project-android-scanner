@@ -30,8 +30,8 @@ import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
 
 public class AmazonLookup extends Lookup {
-    private String secretKey = "*";                          // Amazon secret key used to calculate the Hmac signature
-    private String appID = "*";                                                  // Store the unique Amazon identification key
+    private String secretKey = "*";                                                                 // Amazon secret key used to calculate the Hmac signature
+    private String appID = "*";                                                                     // Store the unique Amazon identification key
 
     public AmazonLookup(){                                                                          // Constructor
         client = new DefaultHttpClient();                                                           // Create a new HttPClient object used to execute Http requests
@@ -40,7 +40,7 @@ public class AmazonLookup extends Lookup {
 
     @Override
     public ArrayList<Product> lookup(Barcode b, String region) throws Exception {                   // Perform a remote lookup of the specified barcode and region on Amazon
-        String canonicalizedString = getCanonicalizedRequest(b);                                    // Get the canonicalized request parameters
+        String canonicalizedString = getStandardisedRequest(b);                                    // Get the canonicalized request parameters
         String requestToSign = "GET" + "\n"                                                         // The full canonicalized request String to sign
                                 + "webservices.amazon.co.uk" + "\n"
                                 + "/onca/xml" + "\n"
@@ -67,8 +67,8 @@ public class AmazonLookup extends Lookup {
         return productList;                                                                         // Return the list of products
     }
 
-    private String getCanonicalizedRequest(Barcode b){                                              // Forms a request String standardised as required by Amazons API, ready for signing
-        StringBuffer canonicalizedString = new StringBuffer();                                      // StringBuffer used to hold our standardised request String as we form it
+    private String getStandardisedRequest(Barcode b){                                               // Forms a request String standardised as required by Amazons API, ready for signing
+        StringBuffer standardisedString = new StringBuffer();                                       // StringBuffer used to hold our standardised request String as we form it
         SortedMap<String, String> parameters = new TreeMap<String, String>();                                    // Map to hold the desired request parameters to add to the request String
         parameters.put("AWSAccessKeyId", appID);                                                    // Add each of the required parameters to the Map
         parameters.put("AssociateTag", "dummyTag");
@@ -82,14 +82,14 @@ public class AmazonLookup extends Lookup {
         Iterator<Map.Entry<String,String>> iterator = parameters.entrySet().iterator();             // Create an Iterator for the set of pairs in the parameter Map
         while(iterator.hasNext()){                                                                  // Loop through each element with the iterator
             Map.Entry<String, String> pair = iterator.next();                                       // Create a String pair for each element in the iterator
-            canonicalizedString.append(encode(pair.getKey()));                                      // Encode and append the key (I.e. the parameter) to the request String
-            canonicalizedString.append("=");                                                        // Append an equals between the Key and the Value
-            canonicalizedString.append(encode(pair.getValue()));                                    // Encode and append the value (I.e. the parameter value) to the request String
+            standardisedString.append(encode(pair.getKey()));                                      // Encode and append the key (I.e. the parameter) to the request String
+            standardisedString.append("=");                                                        // Append an equals between the Key and the Value
+            standardisedString.append(encode(pair.getValue()));                                    // Encode and append the value (I.e. the parameter value) to the request String
             if(iterator.hasNext()){                                                                 // If there are more elements
-                canonicalizedString.append("&");                                                    // Append an ampersand between the parameters
+                standardisedString.append("&");                                                    // Append an ampersand between the parameters
             }
         }
-        return canonicalizedString.toString();                                                      // Return the standardised request String
+        return standardisedString.toString();                                                      // Return the standardised request String
     }
 
     private String encode(String s){                                                                // Encodes the given String as required by the Amazon API

@@ -59,7 +59,7 @@ public class Barcode implements Serializable{
      * @return the simplified barcode format
      */
     public String getSimpleFormat(){
-        if(getFormat().equals("EAN-8") || getFormat().equals("EAN-13")) return "EAN";               // Check the barcode format and return a String containing the simplified format type
+        if(getFormat().equals("EAN_8") || getFormat().equals("EAN_13")) return "EAN";               // Check the barcode format and return a String containing the simplified format type
         else if(getFormat().equals("UPC_A") || getFormat().equals("UPC_E")) return "UPC";
         else return null;
     }
